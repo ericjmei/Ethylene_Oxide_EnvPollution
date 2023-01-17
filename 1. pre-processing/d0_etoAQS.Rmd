@@ -20,7 +20,7 @@ library(writexl)
 library(data.table)
 ```
 
-set credentials; API key is dunbird69
+set credentials; 
 
 ```{r} 
 #uncomment below if first time user; only need to do this once
