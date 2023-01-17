@@ -44,7 +44,7 @@
 
 This repository contains scripts used to analyze data and create the figures for the publication in Environmental Pollution found [here]().
 
-Ethylene Oxide (EtO) data can be found at the GA EPD website [here](epd.georgia.gov/ethylene-oxide-information).
+Ethylene Oxide (EtO) data can be found at the GA EPD website [here](https://epd.georgia.gov/ethylene-oxide-information).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -72,26 +72,10 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 
 
 
-<!-- ROADMAP -->
-## Roadmap
-
-- [ ] Feature 1
-- [ ] Feature 2
-- [ ] Feature 3
-    - [ ] Nested Feature
-
-See the [open issues](https://github.com/github_username/repo_name/issues) for a full list of proposed features (and known issues).
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-
 <!-- CONTACT -->
 ## Contact
 
 Eric Mei - emei3@gatech.edu
-
-Project Link: [https://github.com/github_username/repo_name](https://github.com/github_username/repo_name)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -100,11 +84,14 @@ Project Link: [https://github.com/github_username/repo_name](https://github.com/
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
 
-Several existing tools were used for this analysis. Authors and links for those tools are below.
+Several existing tools or packages were used for this analysis. Links for those tools are below.
 
-* []()
-* []()
-* []()
+* [Tools for Atmospheric Chemistry Research](https://github.com/AirChem)
+* [boundedline](https://www.mathworks.com/matlabcentral/fileexchange/27485-boundedline-m)
+* [Circular Statistics Toolbox](https://www.mathworks.com/matlabcentral/fileexchange/10676-circular-statistics-toolbox-directional-statistics)
+* [geographiclib](https://www.mathworks.com/matlabcentral/fileexchange/50605-geographiclib)
+* [wind rose](https://www.mathworks.com/matlabcentral/fileexchange/47248-wind-rose)
+* [RAQSAPI](https://github.com/USEPA/RAQSAPI)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
