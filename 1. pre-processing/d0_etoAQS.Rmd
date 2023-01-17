@@ -1,0 +1,132 @@
+---
+title: "etoAQS"
+output: JSON of all AQS data
+---
+created: 10/10/2022
+
+# setup
+## libraries
+- RAQSAPI for AQS query [GitHub (get started)](https://github.com/USEPA/RAQSAPI); [user manual](https://cran.r-project.org/web/packages/RAQSAPI/RAQSAPI.pdf)
+- keyring for credentials
+- lubridate for easier datetime handling
+- writexl for storing table
+- data.table for making tables
+  
+```{r}
+library(RAQSAPI) 
+library(keyring)
+library(lubridate)
+library(writexl)
+library(data.table)
+```
+
+set credentials; API key is dunbird69
+
+```{r} 
+#uncomment below if first time user; only need to do this once
+#aqs_sign_up("emei3@gatech.edu") #select email to sign up
+```
+
+```{r}
+datamartAPI_user <- "emei3@gatech.edu" #change to match your email
+server <- "AQSDatamart"
+keyring::key_set(service = server,
+                 username = datamartAPI_user) #enter API key when prompted
+```
+
+get access to API; if your credentials are wrong, you will get no indication. However, your other functions will not work. 
+
+```{r}
+aqs_credentials(username = datamartAPI_user,
+                key = key_get(service = server,
+                              username = datamartAPI_user
+                              )
+                )
+```
+
+# Query
+
+- eto pollutant code is 43601
+- beg date was chosen as before all monitoring efforts began. End date is selected as today to obtain most recent data
+- all 50 states were chosen to be queried for the inital run
+  - statesWithData indicates that only 17 states have data
+  - in subsequent runs, only data from these states are pulled
+
+```{r}
+pollutant <- "43601" #ethylene oxide
+begDate <- as.Date("2018-01-01") #beginning year of eto monitoring
+endDate <- as.Date(today()) #today
+#state <- 1:50 #FIPS codes for all states; reduce number if you know certain states are null
+state <- c(4, 6, 8, 12, 13, 17, 21, 25, 26, 29, 
+           34, 36, 40, 42, 44, 45, 49, 53, 55) #determined from prior run
+
+## preallocate data
+statesWithData <- c()
+allData <- data.table()
+
+
+## query by state (if n years and m states, will take n*m*(5 seconds) to run)
+for (x in state) {
+  temp = aqs_sampledata_by_state(parameter = pollutant,
+                        bdate = begDate,
+                        edate = endDate,
+                        stateFIPS = sprintf("%02d", x)) #query data
+  
+  allData <- rbind(allData, temp) #add queried data to list
+  
+  if (nrow(temp) != 0) {
+    statesWithData <- append(statesWithData, x)
+  }
+}
+
+```
+
+
+write the table to a file
+```{r}
+fp <- "../Data/" #desired file path
+
+write_xlsx(allData, paste(fp, "etoAQS.xlsx", sep = ""))
+```
+
+# temporary fix for missing states
+- in initial search for AQS data, only FIPS codes 1:50 were queried, which misses a few states
+
+```{r}
+# pollutant <- "43601" #ethylene oxide
+# begDate <- as.Date("2018-01-01") #beginning year of eto monitoring
+# endDate <- as.Date(today()) #today
+# #state <- 1:50 #FIPS codes for all states; reduce number if you know certain states are null
+# state <- 51:56 #missing FIPS codes, only 53 and 55 have data
+# 
+# ## preallocate data
+# statesWithDataAddendum <- c()
+# allDataAddendum <- data.table()
+# 
+# 
+# ## query by state (if n years and m states, will take n*m*(5 seconds) to run)
+# for (x in state) {
+#   temp = aqs_sampledata_by_state(parameter = pollutant,
+#                         bdate = begDate,
+#                         edate = endDate,
+#                         stateFIPS = sprintf("%02d", x)) #query data
+#   
+#   allDataAddendum <- rbind(allDataAddendum, temp) #add queried data to list
+#   
+#   if (nrow(temp) != 0) {
+#     statesWithDataAddendum <- append(statesWithDataAddendum, x)
+#   }
+# }
+# 
+# allData <- rbind(allData, allDataAddendum) #add new queried data to list
+```
+
+add data to new file
+
+```{r}
+
+# fp <- "../Data/" #desired file path
+# 
+# write_xlsx(allDataAddendum, paste(fp, "etoAQSAddendum.xlsx", sep = ""))
+
+```
