@@ -50,28 +50,6 @@ Ethylene Oxide (EtO) data can be found at the GA EPD website [here](https://epd.
 
 
 
-<!-- GETTING STARTED -->
-## Getting Started
-
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
-
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-
-<!-- USAGE EXAMPLES -->
-## Usage
-
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
-
-_For more examples, please refer to the [Documentation](https://example.com)_
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-
 <!-- CONTACT -->
 ## Contact
 
@@ -86,12 +64,12 @@ Eric Mei - emei3@gatech.edu
 
 Several existing tools or packages were used for this analysis. Links for those tools are below.
 
-* [Tools for Atmospheric Chemistry Research](https://github.com/AirChem)
-* [boundedline](https://www.mathworks.com/matlabcentral/fileexchange/27485-boundedline-m)
-* [Circular Statistics Toolbox](https://www.mathworks.com/matlabcentral/fileexchange/10676-circular-statistics-toolbox-directional-statistics)
-* [geographiclib](https://www.mathworks.com/matlabcentral/fileexchange/50605-geographiclib)
-* [wind rose](https://www.mathworks.com/matlabcentral/fileexchange/47248-wind-rose)
-* [RAQSAPI](https://github.com/USEPA/RAQSAPI)
+* [Tools for Atmospheric Chemistry Research](https://github.com/AirChem) for humidity and diel cycle calculations
+* [boundedline](https://www.mathworks.com/matlabcentral/fileexchange/27485-boundedline-m) for time series plotting with error shading
+* [Circular Statistics Toolbox](https://www.mathworks.com/matlabcentral/fileexchange/10676-circular-statistics-toolbox-directional-statistics) for WRF wind forecast evaluation
+* [geographiclib](https://www.mathworks.com/matlabcentral/fileexchange/50605-geographiclib) for near-source upwind-downwind assessment
+* [wind rose](https://www.mathworks.com/matlabcentral/fileexchange/47248-wind-rose) for plotting wind directions
+* [RAQSAPI](https://github.com/USEPA/RAQSAPI) for retrieving EPA AQS EtO measurements
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
