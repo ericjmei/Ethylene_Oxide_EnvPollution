@@ -21,17 +21,6 @@
         <li><a href="#built-with">Built With</a></li>
       </ul>
     </li>
-    <li>
-      <a href="#getting-started">Getting Started</a>
-      <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#installation">Installation</a></li>
-      </ul>
-    </li>
-    <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
-    <li><a href="#contributing">Contributing</a></li>
-    <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
     <li><a href="#acknowledgments">Acknowledgments</a></li>
   </ol>
@@ -42,18 +31,17 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-This repository contains scripts used to analyze data and create the figures for the publication in Environmental Pollution found [here]().
+This repository contains scripts used to analyze data and create the figures for the [publication in Environmental Pollution]().
 
-Ethylene Oxide (EtO) data can be found at the GA EPD website [here](https://epd.georgia.gov/ethylene-oxide-information).
+Ethylene Oxide (EtO) data can be found at the [GA EPD website](https://epd.georgia.gov/ethylene-oxide-information).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 
 
 <!-- CONTACT -->
 ## Contact
 
-Eric Mei - emei3@gatech.edu
+Eric J. Mei - emei3@gatech.edu
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -70,6 +58,7 @@ Several existing tools or packages were used for this analysis. Links for those 
 * [geographiclib](https://www.mathworks.com/matlabcentral/fileexchange/50605-geographiclib) for near-source upwind-downwind assessment
 * [wind rose](https://www.mathworks.com/matlabcentral/fileexchange/47248-wind-rose) for plotting wind directions
 * [RAQSAPI](https://github.com/USEPA/RAQSAPI) for retrieving EPA AQS EtO measurements
+* [Best README Template](https://github.com/othneildrew/Best-README-Template) for this README template
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
